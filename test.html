@@ -96,14 +96,14 @@
 <header>
   <div class="left">
     <h1>🌟 CMA Exam</h1>
-    <div class="small" style="margin-left:6px;color:#fff">Full-screen required • 60 min • Max 10 violations</div>
+    <div class="small" style="margin-left:6px;color:#fff">Full-screen required • 20 min • Max 25 violations</div>
   </div>
   <div class="right">
     <div class="user">👤 <span id="displayName">Student</span> &nbsp; | &nbsp; 🏫 <span id="displayDept">Dept</span></div>
     <div style="margin-top:6px">
-      <span class="timer">⏳ <span id="timer">60:00</span></span>
+      <span class="timer">⏳ <span id="timer">20:00</span></span>
       &nbsp;&nbsp;
-      <span class="viol-count">⚠ <span id="violCount">0</span> / 10</span>
+      <span class="viol-count">⚠ <span id="violCount">0</span> / 25</span>
     </div>
   </div>
 </header>
@@ -162,7 +162,7 @@
 /* ---------- CONFIG ---------- */
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyfemI2-Cr_t6EdQdak4V8cEyDmLCUOoUD3zhp3wBTk7syexj-JFoPFwla9KPplljpr/exec";
 /* ---------- STATE ---------- */
-const EXAM_SECONDS = 60 * 60; // 60 minutes = 3600 seconds
+const EXAM_SECONDS = 20 * 60; // 60 minutes = 3600 seconds
 let questions = [];           // array fetched from server
 let currentIndex = 0;
 let answers = {};             // index -> 'A'/'B'/'C'/'D'
@@ -197,7 +197,7 @@ if (!userStr) {
 
 
 /* ---------- Violations & Security ---------- */
-MAX_VIOLATIONS = 10;
+MAX_VIOLATIONS = 25;
 function addViolation(reason){
   if (submitting) return;
   violCount++;
@@ -650,6 +650,7 @@ window.addEventListener('load', ()=> {
 </script>
 </body>
 </html>
+
 
 
 
